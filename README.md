@@ -1,79 +1,115 @@
-# 310 Project Repository Information
+# Let's Go Camping!
 
-This is the repository for the 310 group project.  This basic skeleton provides two initial branches:  **documentation** is for the group's Scrum process documentation, and **main** is the primary branch for development work as described in the project manual. 
+## Introduction
+"Let's Go Camping!" is a web application that helps users discover national parks to visit based on a range of criteria. Developed using React, SpringBoot, Java, and the NPS API, the platform offers a variety of features to improve the experience of planning park trips, keeping track of favorites, and getting recommendations with friends.
 
-## Brief Architecture Overview and Where Things Go
-### React (Frontend)
-All frontend code is to be located in `/site` or a subdirectory. `package.json` contains frontend build configuration and a list of packages your frontend needs to install in order to run. Place top-level pages in `/site/src/pages` and other components in `/site/src/components`.  You will need to download Node.js from https://nodejs.org/ to run the frontend code independently. 
+## Features
+- **Search & Discover:** Search for national parks based on various attributes, and obtain detailed information about each.
+- **User Accounts:** Create a user account to maintain a personalized list of favorite parks.
+- **Favorites & Comparison:** Update and review a favorite park list, and compare it with friends using the friend feature.
+- **Park Suggestions:** Get park suggestions between friends based on shared favorite parks.
+- **Accessibility:** Accessible to people with disabilities through features like audio support, alternative labels, larger/bold text, and keyboard navigation.
+- **Cross-Platform Compatibility:** Works seamlessly on Chrome browsers and mobile devices with dynamic styles.
+- **Data Security:** Secure data storage with hashed passwords, SQL injection protection, and policies covering login, authentication, and search limits.
+- **Architecture:** Features a React client-side and a SpringBoot server-side architecture.
 
-### SpringBoot (Backend)
-All backend code is located in `/src/main` or a subdirectory. Please do not remove `redirect()` from `SpringBootAPI.java`, as this is responsible for enabling your website files to be served. 
+## Technology Stack
+- **Frontend:** React, HTML, CSS, JavaScript
+- **Backend:** SpringBoot, Java
+- **Database:** MySQL
+- **API Integration:** National Park Service (NPS) API
 
-## Running Tests and Checking Coverage for Java & JavaScript
+## Getting Started
 
-All unit tests will run with `mvn test`  and the coverage output directory will be `target/site/jacoco` for your Java code and `site/coverage` for your JavaScript code.
+### Prerequisites
+- Java 14 or later
+- Node.js and npm
+- MySQL
+- Maven
+- Docker (optional for containerization)
 
-### Frontend
-To run just your frontend tests:
-- First, navigate in your terminal/command prompt to `/site`.
-- Run `npm run test` to run Jest tests
-  - This will ask you to select an option: `a` will run all tests, `f` will run failed tests, etc
-- Run `npm run test -- --coverage --watchAll=false` to run Jest coverage tests. Note the extra `--` is required.
+### Installation
+1. **Clone the Repository:**  
+    ```bash
+    git clone https://github.com/VictorH38/Lets-Go-Camping.git
+    ```
+2. **Configure MySQL Database:**  
+    Set up the MySQL database using the schema and data scripts provided in `/src/main/resources/db`.
 
+3. **Update Database Configuration:**  
+    Update the database configuration in `src/main/resources/application.properties` with your MySQL credentials.
 
-## Running Your App Locally During Development
+4. **Install Dependencies:**  
+    - **Frontend:**  
+        Navigate to `/site` and install the dependencies.  
+        ```bash
+        cd site
+        npm install
+        ```
+    - **Backend:**  
+        Install the Java dependencies using Maven.  
+        ```bash
+        mvn install
+        ```
 
-To run the app in the development environment, first run `mvn compile` and then `mvn spring-boot:run` The app will now be available on `http://localhost:8080`
+### Running the Application
 
-### Frontend only
-- Navigate to `/site` in terminal/command prompt
-- Run `npm start`. Note that this will auto rebuild/refresh when you make changes to the frontend.
+- **Frontend:**  
+    Start the frontend by navigating to `/site` and running:  
+    ```bash
+    npm start
+    ```
+    This will launch the frontend on `http://localhost:3000`.
 
-### Backend only
-- Run the main method in `SpringBootAPI.java`
+- **Backend:**  
+    Compile and run the SpringBoot application from the root directory:  
+    ```bash
+    mvn compile
+    mvn spring-boot:run
+    ```
+    The backend will be accessible at `http://localhost:8080`.
 
-## Running Acceptance Tests & Configuring a Subset of Features to Run
+- **Containerized (Optional):**  
+    Run the application in a Docker container:  
+    ```bash
+    docker-compose up --build
+    ```
+    The web application will be available on `http://localhost:8080`.
 
-To run the project's acceptance tests, use `mvn integration-test`.  Cucumber can be configured to run a subset of the features by modifying the `junit-platform.properties` file in the `src/test/resources` folder
+### Testing
+- **Java:**  
+    Run the unit tests with Maven:  
+    ```bash
+    mvn test
+    ```
 
-## Running Your App in the Container for Sprint Review
-
-The container can be run with `docker-compose run --service-ports 310-project` This opens up a bash prompt, then the web app can be compiled with `mvn compile` and run with `mvn spring-boot:run` The app will then be available on localhost:8080.  Note that the container must be configured by the group so it contains all dependencies and environmental configuration necessary for the CP stakeholder to run and interact with the app.  Remember to stop the container to be able to run the app in the development environment.  Without doing so, the OS will report that port 8080 is in use. You can rebuild the docker container after changes using `docker-compose build --no-cache 310-project`
-
+- **JavaScript:**  
+    Navigate to `/site` and run Jest tests:  
+    ```bash
+    npm run test
+    ```
+    To run coverage tests:  
+    ```bash
+    npm run test -- --coverage --watchAll=false
+    ```
 
 ## Useful Links & Resources
-1. React
-   - https://reactjs.org/tutorial/tutorial.html
-   - https://reactjs.org/docs/react-api.html
-   - https://reactjs.org/docs/hooks-intro.html
-   - https://reactjs.org/docs/jsx-in-depth.html
-   - https://www.w3schools.com/REACT/DEFAULT.ASP
-2. Frontend Styling Libraries
-   - https://tailwindcss.com/docs/guides/create-react-app
-     - Start on Step 2 for installation
-     - Search page for relevant styles/class names
-   - https://getbootstrap.com/docs/5.3/getting-started/introduction/
-     - Search page for relevant styles/class names
-3. JavaScript unit testing with Jest
-   - https://jestjs.io/docs/getting-started
-   - https://jestjs.io/docs/tutorial-react
-   - https://www.codecademy.com/learn/learn-react-testing
-4. SpringBoot
-   - https://docs.spring.io/spring-boot/docs/current/reference/html/index.html
-5. Acceptance testing information
-   - Gherkin information: https://cucumber.io/docs/gherkin/reference/
-   - Cucumber information: https://cucumber.io/docs/cucumber/
-   - Selenium information: https://www.selenium.dev/documentation/en/ 
-   - Selenium Javadocs: https://www.selenium.dev/selenium/docs/api/java/
-6. Java unit testing with JUnit
-   - https://junit.org/junit5/
-   - https://site.mockito.org/
-   - https://www.eclemma.org/jacoco/trunk/doc/maven.html
+- **React:**  
+    - [React Official Documentation](https://reactjs.org/docs/getting-started.html)
+    - [React Hooks Guide](https://reactjs.org/docs/hooks-intro.html)
 
-## How to setup database
-* MySQL database in docker-compose file (make sure to `docker-compose up db`  before running your spring boot app in container using `docker-compose run --service-ports 310-project`
-  -> if you are running spring boot in your host machine (not the container), add `--spring.datasource.url=jdbc:mysql://localhost:3307/team15?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC --spring.datasource.username=root --spring.datasource.password=1q2w3e4r!@ --spring.jpa.hibernate.ddl-auto=update`
-  to program argument field in Intellij run configuration. (if you don't see it, click more options and check the program arguments option under java)
+- **SpringBoot:**  
+    - [SpringBoot Documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/index.html)
 
-![alt text](https://raw.githubusercontent.com/CSCI310-20241/project-team-15/main/assets/70870734/7c36f761-7516-42ab-8b18-fe7bde8aafeb)
-![alt text](https://raw.githubusercontent.com/CSCI310-20241/project-team-15/main/assets/70870734/77b8c324-4f57-4440-95c7-cb63c658c86d)
+- **NPS API:**  
+    - [NPS API Guide](https://www.nps.gov/subjects/digital/nps-data-api.htm)
+
+- **Accessibility Guidelines:**  
+    - [W3C Web Accessibility Initiative](https://www.w3.org/WAI/)
+
+## Authors
+- Victor Hoang
+- Sang Kim
+- Matthew Grant
+- Ryan Yeung
+- Damien Felch

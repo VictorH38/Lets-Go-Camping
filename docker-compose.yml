@@ -1,0 +1,38 @@
+version: "3.8"
+services:
+    310-project:
+        build: .
+        ports:
+            - "8080:8080"  # provide direct access to web server
+        stdin_open: true
+        tty: true
+        volumes:
+            - maven-cache:/root/.m2
+            - .:/usr/local/310-project
+        environment:
+            - SPRING_DATASOURCE_URL=jdbc:mysql://db:3306/team15?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+            - SPRING_DATASOURCE_USERNAME=root
+            - SPRING_DATASOURCE_PASSWORD=1q2w3e4r!@
+            - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+        depends_on:
+            - db
+        command: ["/usr/local/bin/wait-for-it.sh", "db:3306", "--", "mvn", "spring-boot:run"]
+
+    db:
+        image: mysql:8.0
+        command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+        environment:
+            MYSQL_ROOT_PASSWORD: 1q2w3e4r!@
+        ports:
+            - "3307:3306"
+        volumes:
+            - ./docker/provision/mysql/init:/docker-entrypoint-initdb.d
+        healthcheck:
+            test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+            timeout: 10s
+            retries: 5
+            start_period: 10s
+
+volumes:
+    maven-cache: {}
+    db-data: {}

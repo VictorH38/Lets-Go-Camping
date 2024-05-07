@@ -1,0 +1,64 @@
+{
+  "total": "1",
+  "data": [
+    {
+      "id": "1",
+      "fullName": "Test Park",
+      "name": "Test",
+      "description": "This is a test park for unit testing purposes.",
+      "weatherInfo": "Typically sunny with occasional rain.",
+      "designation": "National Park",
+      "directionsInfo": "Drive straight and turn left.",
+      "directionsUrl": "https://example.com/directions",
+      "states": "TX",
+      "latitude": "30.0000",
+      "longitude": "-100.0000",
+      "addresses": [
+        {
+          "type": "Physical",
+          "line1": "123 Test St",
+          "stateCode": "TX",
+          "postalCode": "12345"
+        }
+      ],
+      "entranceFees": [
+        {
+          "cost": "10.00",
+          "description": "General Admission",
+          "title": "Adult"
+        }
+      ],
+      "activities": [
+        {
+          "name": "Hiking"
+        },
+        {
+          "name": "Bird Watching"
+        }
+      ],
+      "operatingHours": [
+        {
+          "description": "Open daily from dawn to dusk.",
+          "name": "All Year",
+          "standardHours": {
+            "monday": "All Day",
+            "tuesday": "All Day",
+            "wednesday": "All Day",
+            "thursday": "All Day",
+            "friday": "All Day",
+            "saturday": "All Day",
+            "sunday": "All Day"
+          }
+        }
+      ],
+      "images": [
+        {
+          "title": "Test Image",
+          "caption": "A test image of the park.",
+          "url": "https://example.com/image.jpg",
+          "altText": "An example image"
+        }
+      ]
+    }
+  ]
+}

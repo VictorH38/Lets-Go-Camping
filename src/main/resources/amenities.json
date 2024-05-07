@@ -1,0 +1,117 @@
+{
+  "total": "127",
+  "limit": "15",
+  "start": "0",
+  "data": [
+    {
+      "id": "A1B0AD01-740C-41E7-8412-FBBEDD5F1443",
+      "name": "ATM/Cash Machine",
+      "categories": [
+        "Convenience",
+        "Souvenirs and Supplies"
+      ]
+    },
+    {
+      "id": "4E4D076A-6866-46C8-A28B-A129E2B8F3DB",
+      "name": "Accessible Rooms",
+      "categories": [
+        "Accessibility"
+      ]
+    },
+    {
+      "id": "20291812-E85C-4A84-B8A2-E31C8D149704",
+      "name": "Benches/Seating",
+      "categories": [
+        "Convenience"
+      ]
+    },
+    {
+      "id": "5BDFF349-2F74-490E-A33E-C35286152050",
+      "name": "Bicycle - Rack",
+      "categories": [
+        "Biking",
+        "Recreation"
+      ]
+    },
+    {
+      "id": "B509969B-F06A-4DCC-BBB3-134964D896E2",
+      "name": "Amphitheater",
+      "categories": [
+        "Interpretive",
+        "Recreation"
+      ]
+    },
+    {
+      "id": "89397A1A-3517-4941-8D30-037856E9D063",
+      "name": "Animal-Safe Food Storage",
+      "categories": [
+        "Safety"
+      ]
+    },
+    {
+      "id": "27A7E3AB-CA53-41D3-AEDE-FBF74D20F023",
+      "name": "Braille",
+      "categories": [
+        "Accessibility"
+      ]
+    },
+    {
+      "id": "CBD31D2A-DD1A-4C5D-88C1-67B6B7147CE9",
+      "name": "Assistive Listening Systems",
+      "categories": [
+        "Accessibility"
+      ]
+    },
+    {
+      "id": "D81436AE-5DB6-462B-A4F2-1DC3780A06D9",
+      "name": "Electric Car Charging Station",
+      "categories": [
+        "Fuel"
+      ]
+    },
+    {
+      "id": "7DC6C690-2BC3-4344-9691-EF9FCFB6E506",
+      "name": "Audio Description",
+      "categories": [
+        "Accessibility"
+      ]
+    },
+    {
+      "id": "1C1B932D-32B6-4BAA-8AA6-497F08CC22BF",
+      "name": "Electrical Outlet/Cell Phone Charging",
+      "categories": [
+        "Convenience"
+      ]
+    },
+    {
+      "id": "F4A842CB-C966-402E-BBD3-AB86EDCF8403",
+      "name": "Automated Entrance",
+      "categories": [
+        "Accessibility"
+      ]
+    },
+    {
+      "id": "5BA727FA-943D-418D-A238-44127EBA6EDB",
+      "name": "First Aid Kit Available",
+      "categories": [
+        "Emergency",
+        "Safety"
+      ]
+    },
+    {
+      "id": "B166EAD1-0D3E-4111-AE04-D5AB15DFDEDC",
+      "name": "Baby Changing Station",
+      "categories": [
+        "Convenience"
+      ]
+    },
+    {
+      "id": "29D286B6-069C-4204-AF35-AE7744B71212",
+      "name": "Food/Drink - Snacks",
+      "categories": [
+        "Food",
+        "Souvenirs and Supplies"
+      ]
+    }
+  ]
+}
